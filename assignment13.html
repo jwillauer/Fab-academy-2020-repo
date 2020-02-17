@@ -1,0 +1,93 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : StoneWork 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20140228
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><a href="index.html">Home</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+								
+				
+			</ul>
+		</div>
+	</div>
+	<div id="banner" class="container">
+	<div class="title"> <span class="byline">Input Devices</span></div>
+<ul class="actions">
+	  <li><a href="assignments.html" class="button">Assignments</a></li>
+		</ul>
+	</div>
+</div>
+<div id="wrapper">
+	<div id="three-column" class="container">
+	  <div class="title">
+	    <h2>Assignment 13</h2>
+	    <p class="body"> The Assignment for week 13 was to design a circuit to take advantage of an input device. For my circuit I decided to use the Arduino clone I will be using in my final project. I will be using this chip homemade chip to complete the assignment. I have tested all the coding out a commercial chip to make sure the code and LM-34 senor work before attaching it to the clone. I will have to work out programing the chip to not only talk to my input sensor but also be asking it to communicate to an LCD screen on the output side. This circuit will be used for my final project as a visual to monitor the temerature inside the "oven" when baking my boards. The first step for me was to choose a temerature sensor that simply took basic measurements of the ambient air inside the box. For this input device I settled on a LM 34 Sensor.&nbsp;While looking around the web the LM 34 and LM 35 sensors seem to be abundant and quite cheap to source. They use 3 wires (ground, 5v and A0) and are easily attached to circuit boards and even easier to program. The only difference between the two is that the 34 reads out in Farenheit while the 35 reads out in Centigrade. Seeing as we are in the US I opted for the Farenheit model and ordered it. Here is the data sheet for it.&nbsp;While looking around the web the LM 34 and LM 35 sensors seem to be abundant and quite cheap to source. They use 3 wires (ground, 5v and A0) and are easily attached to circuit boards and even easier to program. The only difference between the two is that the 34 reads out in Farenheit while the 35 reads out in Centigrade. Seeing as we are in the US I opted for the Farenheit model and ordered it. Here is the pin out sheet for it.</p>
+	    <div></div>
+	    <img src="images/LM34-Pinout.jpg" width="1024" height="600" alt=""/>
+<div></div>
+<div></div>
+<p>Once I received my sensor I connected longer leads to the three connections using solder and then used shrink tubing on the entire lead as I wanted to keep the sensor neat as while it is inside the compartment of the hot box. Pin 1 is the 5v connection, Pin 2 is the output to the A0 pin on the arduino clone and Pin 3 is the ground. All in all the temp sensor is fairly easy to build. </p>
+<p>After constructing the sensor and lead wires I was fortunate to find some information on the internet showing me how to both connect the sensor first to Arduino and how to start looking at the code in order to make it work. Eventually once I made sure the code worked I uploaded the sketch to my clone for the final assembly. In the picture below you will see the finished sensor and the pinout sheet for connecting it to arduino. <img src="images/LM-34-wrapped.jpg" width="1028" height="600" />screen. </p>
+	    
+	    <img src="images/arduin-pins.jpg" width="1024" height="600" alt=""/>
+	    <p>Once I had the sensor connected I started to work on the code for the chip to read the LM34 and turn the analog signal into a temperature. To do this you need to convert known voltage into a corresponding temperature value. The coding looks like this in the Arduino IDE. Below you can see the sensor working in the serial monitor. I have it written to check both Fahrenheit and Celsius but in the end product it will only "print" the Fahrenheit to the LCD. </p>
+	    <img src="images/basic-temp-code.jpg" width="1028" height="600" alt=""/>
+		<img src="images/serial-montor-temp-only.jpg" width="1028" height="600" alt=""/>
+	    <div></div>
+	    <a href="temp_sensor_file_2/temp_sensor_file_2.ino">Temp Sensor Code</a>	    
+	    <p>I wanted to see if I could use some prior coding knowledge so I tried to see if I could manipulate the reporting of the sensor to the Nano. I set it to take the temp reading once every half second instead once a second by changing the delay from 1000 to 500 milliseconds,</p>
+	    <img src="images/edited-temp-sensor-code.jpg" width="1028" height="600" alt=""/>
+	    <div></div>
+	    <a href="temp_sensor_file_2_edited/temp_sensor_file_2_edited.ino">Temp Sensor Code Edited</a>
+<p>The next step is to work on connecting an LCD screen to the clone/sensor so that I can have an easy to read display of what is going on in the compartment of the hot box. Later I will also explore the possiblity of a wireless transmitter so that I can monitor the system from a remote location in my house </p>
+	    
+	    <img src="images/screen.jpg" width="1028" height="600" alt=""/>
+	    
+      
+      
+</div>
+<div id="welcome">
+	<div class="container">
+		<div class="title">
+			<h2></h2>
+			<span class="byline"></span>
+		</div>
+		<p>This is <strong>StoneWork</strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have fun :) </p>
+		<div></div>
+<ul class="actions">
+	  <li><a href="#" class="button">home</a></li>
+		</ul>
+	</div>
+</div>
+<div id="copyright" class="container">
+	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+</body>
+</html>
